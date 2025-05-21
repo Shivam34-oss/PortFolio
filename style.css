@@ -1,0 +1,151 @@
+css fil 
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: #2f2f51;
+  color: #fff;
+}
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-list li {
+  list-style: none;
+}
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-list a:hover {
+  color: #f8cc22;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero */
+#hero {
+  text-align: center;
+  padding: 6rem 1rem;
+  background: linear-gradient(to right, #2f2f51, #514f84);
+  color: #fff;
+}
+#hero span {
+  color: #f8cc22;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+.delay {
+  animation-delay: 0.5s;
+}
+
+/* About, Skills, Projects, Contact */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.skills-list li {
+  background: #e2e2f4;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+}
+
+/* Projects */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.project-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Contact Form */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+input, textarea, button {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+button {
+  background: #2f2f51;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #514f84;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2f2f51;
+  color: #fff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background: #2f2f51;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+  }
+  .nav-list.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
