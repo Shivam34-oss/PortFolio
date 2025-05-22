@@ -24,21 +24,6 @@
       <div id="outputText" class="min-h-[100px] bg-gray-50 border border-indigo-200 rounded-xl p-4 whitespace-pre-wrap text-gray-800"></div>
     </div>
   </div>
-
-  <script>
-    function convertText(type) {
-      const input = document.getElementById('inputText').value;
-      let result = '';
-      if (type === 'upper') result = input.toUpperCase();
-      else if (type === 'lower') result = input.toLowerCase();
-      else if (type === 'reverse') result = input.split('').reverse().join('');
-      document.getElementById('outputText').textContent = result;
-    }
-
-    function clearText() {
-      document.getElementById('inputText').value = '';
-      document.getElementById('outputText').textContent = '';
-    }
-  </script>
+<script src="/Projects/converter.js"></script>
 </body>
 </html>
