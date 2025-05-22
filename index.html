@@ -8,6 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Preloader -->
+<div id="preloader">
+  <div class="loader"></div>
+</div>
+
+<!-- Portfolio Content (baaki ka content) -->
+<div id="main-content" style="display: none;">
+</div>
+
   <header>
     <nav class="navbar">
       <div class="logo">Shivam Chauhan</div>
@@ -85,11 +94,6 @@
     <p>&copy; 2025 Shivam Chauhan. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Responsive navbar toggle
-    document.getElementById('mobile-menu').addEventListener('click', () => {
-      document.querySelector('.nav-list').classList.toggle('active');
-    });
-  </script>
+<script src="main.js"></script>
 </body>
 </html>
