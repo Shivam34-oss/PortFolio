@@ -83,8 +83,8 @@ header {
 
 /* About, Skills, Projects, Contact */
 section {
- padding: 1rem 1rem;
-    text-align: center;
+  padding: 1rem 1rem;
+  text-align: center;
 }
 
 .skills-list {
@@ -92,6 +92,7 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  padding-left: 0px;
 }
 
 .skills-list li {
@@ -179,4 +180,6 @@ footer {
   .menu-toggle {
     display: block;
   }
+
+
 }
