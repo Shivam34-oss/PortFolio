@@ -6,7 +6,7 @@
 
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
-  const mainContent = document.getElementById("main-content");
+//   const mainContent = document.getElementById("main-content");
 
   // Fade out effect
   preloader.style.transition = "opacity 0.5s ease";
