@@ -190,7 +190,6 @@ footer {
   100% { transform: rotate(360deg); }
 }
 
-
 /* Responsive */
 @media (max-width: 768px) {
   .nav-list {
