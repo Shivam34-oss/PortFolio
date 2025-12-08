@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styles from './skills.module.css'
 
 const SKILLS = ['HTML5', 'CSS3 / SCSS', 'JavaScript', 'NodeJs', 'ReactJS', 'MongoDB', 'Express']
