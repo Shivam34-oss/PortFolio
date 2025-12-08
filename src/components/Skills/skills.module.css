@@ -1,0 +1,23 @@
+.skillsSection {
+  padding: 2.25rem 1rem;
+  text-align: center;
+  background: #fff;
+}
+.list {
+  display:flex;
+  justify-content:center;
+  gap: 1rem;
+  flex-wrap:wrap;
+  margin-top:1rem;
+  padding: 0;
+  list-style:none;
+}
+.list li {
+  background: #e2e2f4;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+}
+.list :hover{
+  background: linear-gradient(90deg,#f7c948,#f0b63e);
+  transition:  0.5s ease-in-out 0.1s;
+}

@@ -1,0 +1,37 @@
+.hero {
+  background: linear-gradient(180deg, rgba(58,55,93,1) 0%, rgba(86,79,122,1) 100%);
+  color: #fff;
+  padding: 6rem 1.25rem;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+.title span { color: #f8cc22; }
+
+.subtitle {
+  margin-bottom: 1.25rem;
+  opacity: 0.95;
+  font-size: 1.05rem;
+}
+
+.ctas {
+  display:flex;
+  gap: 12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin: 1.2rem 0;
+}
+
+.btn {
+  background: linear-gradient(90deg,#f7c948,#f0b63e);
+  color: #111;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.skills { margin-top: 0.8rem; opacity: 0.9; font-size: 0.95rem; }

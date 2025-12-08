@@ -1,0 +1,13 @@
+.wrap { padding: 2.5rem 1rem; background: #fff; color:#222; }
+.title { text-align:center; margin-bottom: 1rem; font-size: 1.4rem; }
+.form { max-width:760px; margin: 0 auto; display:grid; gap:10px; }
+.field { display:block; }
+.field span { display:block; margin-bottom:6px; font-weight:600; }
+.field input, .field textarea {
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(20,20,30,0.08);
+}
+.actions { display:flex; justify-content:flex-start; gap:12px; margin-top:6px; }
+.btn { background: linear-gradient(90deg,#2b2b6b,#3f37a0); color:#fff; padding:10px 16px; border-radius:8px; border:none; }

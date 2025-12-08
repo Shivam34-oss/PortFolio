@@ -1,0 +1,18 @@
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body {
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.6;
+  background:#f8f7fb;
+  color:#111;
+}
+
+/* smooth scroll + anchor offset (for sticky header) */
+html { scroll-behavior: smooth; }
+main { padding-bottom: 3rem; }
+
+/* small utilities */
+.section-title { text-align:center; font-size:1.6rem; margin-bottom:1rem; }
+
+/* responsive container spacing can be added per component */
