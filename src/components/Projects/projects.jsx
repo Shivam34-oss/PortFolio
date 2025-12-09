@@ -9,7 +9,7 @@ export default function Projects() {
         <article className={styles.card}>
           <h3>Text Converter</h3>
           <p>A simple tool that converts text to uppercase/lowercase/reverse.</p>
-          <a className={styles.link} href="./projects/textConvert.html" target="_blank" rel="noreferrer">View Project</a>
+          <a className={styles.link} href="/textConvert.html" target="_blank" rel="noreferrer">View Project</a>
         </article>
 
         <article className={styles.card}>

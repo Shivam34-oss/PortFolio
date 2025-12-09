@@ -1,23 +1,29 @@
-.projects { padding: 2.5rem 1rem; text-align: center; }
+.projects {
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
 .grid {
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
 }
+
 .card {
   background: #fff;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
+
 .link {
-  display:inline-block;
+  display: inline-block;
   font-weight: 500;
-  margin-top:10px;
-  text-decoration:none;
-  color:black;
-  background: linear-gradient(90deg,#f7c948,#f0b63e);
-  padding:8px 12px;
-  border-radius:6px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(90deg, #f7c948, #f0b63e);
+  padding: 8px 12px;
+  border-radius: 6px;
 }

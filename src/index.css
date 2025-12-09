@@ -12,7 +12,6 @@ body {
 html { scroll-behavior: smooth; }
 main { padding-bottom: 3rem; }
 
-/* small utilities */
+
 .section-title { text-align:center; font-size:1.6rem; margin-bottom:1rem; }
 
-/* responsive container spacing can be added per component */
