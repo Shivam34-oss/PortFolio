@@ -9,7 +9,7 @@ export default function Hero() {
 
       <div className={styles.ctas}>
         <a className={styles.btn} href="#projects">View Projects</a>
-        <a className={styles.btn} href="/assets/Shivam-Chauhan-CV.pdf" download>Download CV</a>
+        <a className={styles.btn} href="/Shivam_Chauhan_Resume.pdf" download = "Shivam-Chauhan-CV.pdf">Download CV</a>
         <a className={styles.btn} href="#contact">Hire Me</a>
       </div>
 
