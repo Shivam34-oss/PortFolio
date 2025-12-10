@@ -12,7 +12,7 @@ const projectsData = [
     tech: ["React", "CSS Modules", "Responsive"],
     image: "/assets/projects/health-dashboard.png",
     demo: "https://your-demo-link-1.com",
-    repo: "https://github.com/yourusername/health-dashboard"
+    repo: "https://github.com/Shivam34-oss/Healthcare-dashboard"
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const projectsData = [
     tech: ["HTML", "CSS", "JS", "React"],
     image: "/assets/projects/auth-ui.png",
     demo: "https://your-demo-link-3.com",
-    repo: "https://github.com/yourusername/auth-ui"
+    repo: "https://github.com/Shivam34-oss"
   }
 ];
 

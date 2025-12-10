@@ -42,7 +42,7 @@ export default function HealthProject() {
 
             <div className={styles.actions}>
               <a href="https://portfolio-t7ka.onrender.com/" target="_blank" rel="noreferrer" className={styles.btn}>Open Portfolio Demo</a>
-              <a href="https://github.com/yourusername/health-dashboard" target="_blank" rel="noreferrer" className={styles.outline}>View Code</a>
+              <a href="https://github.com/Shivam34-oss/Healthcare-dashboard" target="_blank" rel="noreferrer" className={styles.outline}>View Code</a>
             </div>
           </div>
         </div>
