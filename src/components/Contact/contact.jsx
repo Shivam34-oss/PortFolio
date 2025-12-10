@@ -11,18 +11,18 @@ export default function Contact() {
         <div className={styles.info}>
           <div>
             <strong>Email</strong>
-            <p>shivam@example.com</p>
+            <p>sc7601862@gmail.com.com</p>
           </div>
 
           <div>
             <strong>WhatsApp</strong>
-            <p>+91-XXXXXXXXXX</p>
+            <p>+91-8924916975</p>
           </div>
 
           <div>
             <strong>LinkedIn</strong>
             <p>
-              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/shivam-chauhan-86067a209/" target="_blank" rel="noreferrer">
                 linkedin.com/in/yourprofile
               </a>
             </p>

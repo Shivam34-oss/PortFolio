@@ -9,8 +9,8 @@ import Skills from './components/Skills/skills';
 import Projects from './components/Projects/projects';
 import Contact from './components/Contact/contact';
 import Footer from './components/Footer/footer';
-import HealthProject from "./components/pages/HealthProject";
-import AuthUI from "./components/pages/authUI";
+import HealthProject from "./components/Pages/HealthProject";
+import AuthUI from "./components/Pages/authUI";
 
 function App() {
   return (
@@ -45,7 +45,7 @@ function HomeLayout() {
   );
 }
 
-/* Map project id to page */
+/* This is  Map project id to page */
 function ProjectRouter() {
   const { id } = useParams();
 
