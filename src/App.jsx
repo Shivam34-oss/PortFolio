@@ -9,10 +9,10 @@ import Skills from './components/Skills/skills';
 import Projects from './components/Projects/projects';
 import Contact from './components/Contact/contact';
 import Footer from './components/Footer/footer';
+import HealthProject from  './components/Pages/healthproject ';
+import AuthUI from './components/Pages/authui ';
 
-// pages (ensure filenames and casing match exactly)
-import HealthProject from "./components/pages/HealthProject";
-import AuthUI from "./components/pages/authUI";
+
 
 function App() {
   return (
