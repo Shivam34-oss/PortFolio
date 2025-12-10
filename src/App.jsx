@@ -9,7 +9,6 @@ import Skills from './components/Skills/skills';
 import Projects from './components/Projects/projects';
 import Contact from './components/Contact/contact';
 import Footer from './components/Footer/footer';
-
 import HealthProject from "./components/pages/HealthProject";
 import AuthUI from "./components/pages/authUI";
 
