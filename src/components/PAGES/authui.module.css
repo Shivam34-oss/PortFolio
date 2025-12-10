@@ -1,0 +1,89 @@
+.page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 12px;
+    background: #fff;
+}
+
+.box {
+    width: 380px;
+    max-width: 95%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(10, 10, 20, 0.06);
+    padding: 18px;
+    background: #f8fbff;
+}
+
+.switch {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.switch button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.switch .active {
+    background: #2b6ef6;
+    color: #fff;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #dbe6ff;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 0 4px rgba(43, 110, 246, 0.08);
+}
+
+.submit {
+    margin-top: 8px;
+    background: #2b6ef6;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.msg {
+    background: #e9f7ef;
+    color: #145a3a;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 0.9rem;
+}
+
+@media (max-width:420px) {
+    .box {
+        padding: 14px;
+    }
+}

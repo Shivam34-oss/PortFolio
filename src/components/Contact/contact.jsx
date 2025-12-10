@@ -1,29 +1,36 @@
-
-import styles from './contact.module.css'
+import React from "react";
+import styles from "./contact.module.css";
 
 export default function Contact() {
   return (
-    <section id="contact" className={styles.wrap}>
-      <h2 className={styles.title}>Contact</h2>
+    <section className={styles.contact} id="contact">
+      <div className={styles.inner}>
+        <h2>Contact</h2>
+        <p>Have a project or need help? Reach out — I reply fast.</p>
 
-      <form className={styles.form} onSubmit={(e) => { e.preventDefault(); alert('Message sent (demo)') }}>
-        <label className={styles.field}>
-          <span>Name</span>
-          <input name="name" required />
-        </label>
-        <label className={styles.field}>
-          <span>Email</span>
-          <input name="email" type="email" required />
-        </label>
-        <label className={styles.field}>
-          <span>Message</span>
-          <textarea name="message" rows="5" required />
-        </label>
+        <div className={styles.info}>
+          <div>
+            <strong>Email</strong>
+            <p>shivam@example.com</p>
+          </div>
 
-        <div className={styles.actions}>
-          <button className={styles.btn} type="submit">Send</button>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>+91-XXXXXXXXXX</p>
+          </div>
+
+          <div>
+            <strong>LinkedIn</strong>
+            <p>
+              <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">
+                linkedin.com/in/yourprofile
+              </a>
+            </p>
+          </div>
         </div>
-      </form>
+
+        <a className={styles.cta} href="mailto:shivam@example.com">Email Me</a>
+      </div>
     </section>
-  )
+  );
 }
