@@ -11,7 +11,7 @@ export default function Contact() {
         <div className={styles.info}>
           <div>
             <strong>Email</strong>
-            <p>sc7601862@gmail.com.com</p>
+            <p>sc7601862@gmail.com</p>
           </div>
 
           <div>

@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="hero" className={styles.hero}>
       <h1 className={styles.title}>Hi, I'm <span>Shivam Chauhan</span></h1>
-      <p className={styles.subtitle}>Full-Stack Web Developer & Designer</p>
+      <p className={styles.subtitle}>Full-Stack Web Developer (MERN)</p>
 
       <div className={styles.ctas}>
         <a className={styles.btn} href="#projects">View Projects</a>
