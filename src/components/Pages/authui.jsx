@@ -17,46 +17,53 @@ export default function AuthUI() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setMsg("");
+const onSubmit = async (e) => {
+  e.preventDefault();
+  setMsg("");
 
-    try {
-      const url =
-        mode === "login"
-          ? `${API_BASE_URL}/api/auth/login`
-          : `${API_BASE_URL}/api/auth/register`;
+  try {
+    const url =
+      mode === "login"
+        ? `${API_BASE_URL}/api/auth/login`
+        : `${API_BASE_URL}/api/auth/register`;
 
-      const payload =
-        mode === "login"
-          ? { email: form.email, password: form.password }
-          : form;
+    const payload =
+      mode === "login"
+        ? { email: form.email, password: form.password }
+        : form;
 
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-      const data = await res.json();
+    const data = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data.message || "Failed");
-      }
+    if (!res.ok) {
+      throw new Error(data.message || "Failed");
+    }
 
+    // ✅ ONLY LOGIN STORES TOKEN
+    if (mode === "login") {
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
-
-      resetForm();
       setMsg("Login successful!");
 
       setTimeout(() => {
-        navigate("/");
+        window.location.href = "/"; // 🔥 FORCE RELOAD
       }, 800);
-    } catch (error) {
-      setMsg(error.message || "Something went wrong");
+    } else {
+      // ✅ SIGNUP FLOW
+      setMsg("Account created successfully. Please login.");
+      resetForm();
+      setMode("login");
     }
-  };
+  } catch (error) {
+    setMsg(error.message || "Something went wrong");
+  }
+};
+
 
   return (
     <div className={styles.page}>

@@ -65,7 +65,7 @@ export default function Navbar() {
     if (open) setOpen(false);
   };
 
-  // 🚪 LOGOUT HANDLER
+  //  LOGOUT HANDLER
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -138,7 +138,7 @@ export default function Navbar() {
             Contact
           </NavItem>
 
-          {/* 🔐 LOGIN / LOGOUT TOGGLE */}
+          {/* LOGIN / LOGOUT TOGGLE */}
           {isLoggedIn ? (
             <li className={styles.navItem}>
               <span
