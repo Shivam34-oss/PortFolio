@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./authui.module.css";
-import API from "../../services/api";
+import API_BASE_URL from "../../services/api";
 
 export default function AuthUI() {
   const [mode, setMode] = useState("login");
@@ -22,12 +22,27 @@ export default function AuthUI() {
     setMsg("");
 
     try {
-      const url = mode === "login" ? "/auth/login" : "/auth/register";
-      const payload = mode === "login"
-        ? { email: form.email, password: form.password }
-        : form;
+      const url =
+        mode === "login"
+          ? `${API_BASE_URL}/api/auth/login`
+          : `${API_BASE_URL}/api/auth/register`;
 
-      const { data } = await API.post(url, payload);
+      const payload =
+        mode === "login"
+          ? { email: form.email, password: form.password }
+          : form;
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.message || "Failed");
+      }
 
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
@@ -39,7 +54,7 @@ export default function AuthUI() {
         navigate("/");
       }, 800);
     } catch (error) {
-      setMsg(error.response?.data?.message || "Something went wrong");
+      setMsg(error.message || "Something went wrong");
     }
   };
 
@@ -75,6 +90,7 @@ export default function AuthUI() {
               placeholder="Your name"
               value={form.name}
               onChange={onChange}
+              required
             />
           )}
 
@@ -83,6 +99,7 @@ export default function AuthUI() {
             placeholder="Email"
             value={form.email}
             onChange={onChange}
+            required
           />
 
           <input
@@ -91,6 +108,7 @@ export default function AuthUI() {
             placeholder="Password"
             value={form.password}
             onChange={onChange}
+            required
           />
 
           <button type="submit">
@@ -103,4 +121,5 @@ export default function AuthUI() {
     </div>
   );
 }
+
 
