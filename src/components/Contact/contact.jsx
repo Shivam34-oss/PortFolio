@@ -19,14 +19,7 @@ export default function Contact() {
             <p>+91-8924916975</p>
           </div>
 
-          <div>
-            <strong>LinkedIn</strong>
-            <p>
-              <a href="https://www.linkedin.com/in/shivam-chauhan-86067a209/" target="_blank" rel="noreferrer">
-                linkedin.com/in/yourprofile
-              </a>
-            </p>
-          </div>
+         
         </div>
 
         <a className={styles.cta} href="mailto:shivam@example.com">Email Me</a>

@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import styles from './footer.module.css'
 
 const SOCIAL = [
-  { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-username', svg: /* svg */ (
+  { id: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/shivam-chauhan-86067a209/', svg: /* svg */ (
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
       <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8h4.54V24H.2V8zm7.9 0h4.36v2.18h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 6.99V24h-4.53v-7.7c0-1.84-.03-4.21-2.57-4.21-2.57 0-2.96 2.01-2.96 4.08V24H8.1V8z"/>
     </svg>
   )},
-  { id: 'github', label: 'GitHub', href: 'https://github.com/your-username', svg: (
+  { id: 'github', label: 'GitHub', href: 'https://github.com/Shivam34-oss', svg: (
     <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
       <path fill="currentColor" d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.76 3.08 8.8 7.36 10.23.54.1.73-.24.73-.53 0-.26-.01-1.13-.02-2.05-2.99.65-3.62-1.44-3.62-1.44-.49-1.24-1.2-1.57-1.2-1.57-.98-.67.07-.66.07-.66 1.08.08 1.65 1.11 1.65 1.11.96 1.63 2.52 1.16 3.14.89.1-.69.38-1.16.69-1.43-2.39-.27-4.9-1.2-4.9-5.33 0-1.18.42-2.15 1.11-2.91-.11-.27-.48-1.36.11-2.83 0 0 .92-.29 3.02 1.11a10.4 10.4 0 0 1 2.75-.37c.93 0 1.87.12 2.75.37 2.1-1.4 3.02-1.11 3.02-1.11.6 1.47.23 2.56.12 2.83.69.76 1.11 1.73 1.11 2.91 0 4.14-2.52 5.05-4.92 5.32.39.34.73 1.02.73 2.06 0 1.49-.01 2.69-.01 3.05 0 .29.19.64.74.53C20.02 20.4 23.1 16.36 23.1 11.6 23.1 5.33 18.27.5 12 .5z"/>
     </svg>

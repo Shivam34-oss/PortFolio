@@ -5,9 +5,9 @@ import styles from "./projects.module.css";
 const projectsData = [
   {
     id: "auth",
-    title: "Auth UI (Login / Signup)",
+    title: "Secure Auth System",
     description:
-      "Complete authentication system with signup & login using JWT, MongoDB, Express and React. Includes form validation, token handling and protected flow.",
+      "A production-ready authentication system featuring JWT Security , HttpOnly Cookies , and Password Hashing(Bcrypt).Designed to be a reusable microservice for secure apps",
     tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     image: "/assets/projects/auth-ui.png",
     type: "internal"
@@ -20,7 +20,7 @@ const projectsData = [
     tech: ["Node.js", "Express", "MongoDB", "EJS", "Bootstrap"],
     image: "/assets/projects/wanderlust.png",
     demo: "https://wonderlust-listing-fgbx.onrender.com/",
-    repo: "https://github.com/YOUR_GITHUB/wanderlust",
+    repo: "https://github.com/Shivam34-oss/MajorProject",
     type: "external"
   }
 ];

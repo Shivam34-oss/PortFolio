@@ -20,7 +20,7 @@ export default function Navbar() {
 
   const toggle = () => setOpen((prev) => !prev);
 
-  // 🔐 CHECK LOGIN STATUS
+  //  CHECK LOGIN STATUS
   useEffect(() => {
     const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
