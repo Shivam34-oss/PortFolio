@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
 
 import Navbar from "./components/Navbar/navbar";
+import Dashboard from "./components/Pages/dashboard";
 import Hero from "./components/Hero/hero";
 import About from "./components/About/about";
 import Skills from "./components/Skills/skills";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<HomeLayout />} />
           <Route path="/projects/:id" element={<ProjectRouter />} />
           <Route path="/auth-demo" element={<AuthUI />} />
+          <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path="*" element={<HomeLayout />} />
         </Routes>
       </main>

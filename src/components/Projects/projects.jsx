@@ -14,7 +14,7 @@ const projectsData = [
   },
   {
     id: "wanderlust",
-    title: "Wanderlust – Travel Listing Platform",
+    title: "StaySphere – Rental Marketplace",
     description:
       "Full-stack Airbnb-style travel listing platform. Users can explore destinations and listings. Built with Node.js, Express & MongoDB. Deployed live on Render.",
     tech: ["Node.js", "Express", "MongoDB", "EJS", "Bootstrap"],
