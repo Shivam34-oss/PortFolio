@@ -74,93 +74,34 @@ export default function Navbar() {
     navigate("/");
   };
 
-  return (
+   return (
     <header className={styles.header}>
       <nav className={styles.navbar} aria-label="Primary navigation">
         <div className={styles.brand}>
-          <a
-            href="#hero"
-            className={styles.logo}
-            onClick={() => navigate("/")}
-          >
-            Shivam Chauhan
+          <a href="#hero" className={styles.logo} onClick={() => navigate("/")}>
+             {/* Text logo with a dot for professional touch */}
+             Shivam<span className={styles.dot}>.</span>
           </a>
         </div>
 
-        <button
-          ref={toggleRef}
-          className={`${styles.menuToggle} ${open ? styles.isActive : ""}`}
-          onClick={toggle}
-          aria-controls="primary-navigation"
-          aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24">
-            <g
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            >
-              <path className={styles.bar1} d="M3 6h18"></path>
-              <path className={styles.bar2} d="M3 12h18"></path>
-              <path className={styles.bar3} d="M3 18h18"></path>
-            </g>
-          </svg>
-        </button>
+        {/* Existing Button and Backdrop code... */}
 
-        {/* backdrop for mobile */}
-        <div
-          className={`${styles.backdrop} ${
-            open ? styles.backdropVisible : ""
-          }`}
-          aria-hidden={!open}
-        ></div>
+        <ul id="primary-navigation" ref={navRef} className={`${styles.navList} ${open ? styles.active : ""}`}>
+          <NavItem href="#hero" onClick={onNavClick}>Home</NavItem>
+          <NavItem href="#about" onClick={onNavClick}>About</NavItem>
+          <NavItem href="#skills" onClick={onNavClick}>Skills</NavItem>
+          <NavItem href="#projects" onClick={onNavClick}>Projects</NavItem>
+          <NavItem href="#contact" onClick={onNavClick}>Contact</NavItem>
 
-        <ul
-          id="primary-navigation"
-          ref={navRef}
-          className={`${styles.navList} ${open ? styles.active : ""}`}
-        >
-          <NavItem href="#hero" onClick={onNavClick}>
-            Home
-          </NavItem>
-          <NavItem href="#about" onClick={onNavClick}>
-            About
-          </NavItem>
-          <NavItem href="#skills" onClick={onNavClick}>
-            Skills
-          </NavItem>
-          <NavItem href="#projects" onClick={onNavClick}>
-            Projects
-          </NavItem>
-          <NavItem href="#contact" onClick={onNavClick}>
-            Contact
-          </NavItem>
-
-          {/* LOGIN / LOGOUT TOGGLE */}
           {isLoggedIn ? (
             <li className={styles.navItem}>
-              <span
-                className={styles.navLink}
-                style={{ cursor: "pointer", color: "#ffb703" }}
-                onClick={handleLogout}
-              >
-                Logout
-              </span>
+              <button className={styles.authBtn} onClick={handleLogout}>Logout</button>
             </li>
           ) : (
             <li className={styles.navItem}>
-              <span
-                className={styles.navLink}
-                style={{ cursor: "pointer", color: "#ffb703" }}
-                onClick={() => {
-                  setOpen(false);
-                  navigate("/auth-demo");
-                }}
-              >
+              <button className={styles.authBtn} onClick={() => { setOpen(false); navigate("/auth-demo"); }}>
                 Login
-              </span>
+              </button>
             </li>
           )}
         </ul>

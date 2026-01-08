@@ -1,37 +1,98 @@
 .hero {
-  background: linear-gradient(180deg, rgba(58,55,93,1) 0%, rgba(86,79,122,1) 100%);
-  color: #fff;
-  padding: 6rem 1.25rem;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top right , #1e293b, #0f172a);
+  /* color: #fff; */
+  padding: 2rem;
   text-align: center;
 }
-
+.container {
+  max-width: 800px;
+}
 .title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  margin-bottom: 0.6rem;
-  font-weight: 600;
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 800;
 }
-.title span { color: #f8cc22; }
-
+.name{
+  background: linear-gradient(to right , #60a5fa , #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .subtitle {
-  margin-bottom: 1.25rem;
-  opacity: 0.95;
-  font-size: 1.05rem;
+  font-size: 1.5rem;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  /* opacity: 0.95; */
 }
-
+.description{
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
 .ctas {
   display:flex;
-  gap: 12px;
+  gap: 1.5rem;
   justify-content:center;
-  flex-wrap:wrap;
-  margin: 1.2rem 0;
+  margin-bottom: 3rem;
 }
 
-.btn {
-  background: linear-gradient(90deg,#f7c948,#f0b63e);
-  color: #111;
-  padding: 10px 18px;
-  border-radius: 10px;
+.btnPrimary {
+  background: #2563eb;
+  color:white;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(37 , 99 , 235 , 0.3);
+
 }
-.skills { margin-top: 0.8rem; opacity: 0.9; font-size: 0.95rem; }
+.btnSecondary{
+ border: 1px solid #334155;
+ color: white;
+ padding: 0.8rem 2rem;
+ border-radius: 50px;
+ text-decoration: none;
+transition: 0.3s;
+}
+.btnPrimary:hover{
+  transform: translateY(-3px); background: #1d4ed8;
+}
+.btnSecondary:hover{
+  background: #1e293b;
+}
+
+.socials{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+
+}
+.socials a {
+  color: #94a3b8;
+  transition: 0.3s;
+}
+.socials a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+.skillBadge{
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid #334155;
+  color: #60a5fa;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin: 0 0.5rem;
+}

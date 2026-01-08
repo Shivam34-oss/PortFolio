@@ -1,173 +1,89 @@
-:root {
-  --bg: #ffffff;
-  --muted: #5b6b78;
-  --accent: #185ee6;
-  --card: #f8fbff;
-  --text: #0f1724;
-  --glass: rgba(24, 94, 230, 0.06);
-}
-.subtitle {
-  margin: 0.4rem 0 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-
 .about {
-  padding: 3.5rem 1rem;
-  background: var(--bg);
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    padding: 100px 20px;
+    background-color: #ffffff; /* Contrast for Hero section */
+    color: #1e293b;
 }
 
-/* inner container keeps content centered and responsive */
-.inner {
-  width: 100%;
-  max-width: 1100px;
-  align-items: start;
-  padding: 1.25rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 22px rgba(8, 15, 25, 0.06);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(250, 250, 252, 0.9));
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* left column */
-.left {
-  text-align: center;
-  padding: 1rem;
-  border-radius: 10px;
-  background: var(--card);
-  box-shadow: 0 4px 14px rgba(7, 12, 22, 0.04);
+.header {
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.name {
-  font-size: 1.35rem;
-  margin: 0.25rem 0 0;
-  color: var(--text);
-  font-weight: 700;
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
-.subtitle {
-  margin: 0.4rem 0 1rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.35;
+.underline {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #2563eb, #34d399);
+    margin: 0 auto;
+    border-radius: 2px;
 }
-
-
-/* right column */
-.right {
-  padding: 1rem 0.5rem;
-  text-align: center;
-  /* ADD THIS */
-  display: flex;
-  /* ADD THIS */
-  flex-direction: column;
-  /* ADD THIS */
-  align-items: center;
-  /* ADD THIS */
-}
-
 
 .bio {
-  margin: 0 0 1rem;
-  color: #25303a;
-  line-height: 1.7;
-  font-size: 1rem;
-  max-width: 75ch;
-}
-
-.highlights {
-  margin: 0 0 1rem;
-  padding-left: 0;
-  /* remove left padding */
-  color: var(--muted);
-  line-height: 1.5;
-  text-align: center;
-  /* ADD THIS */
-  list-style: none;
-  /* remove bullets for cleaner center look */
-}
-
-
-.highlights li {
-  margin-bottom: 0.45rem;
-  font-size: 0.98rem;
-}
-
-.skillsWrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-  justify-content: center;
-  /* ADD THIS */
-}
-
-
-.skill {
-  background: rgba(24, 94, 230, 0.07);
-  color: var(--accent);
-  border: 1px solid rgba(24, 94, 230, 0.09);
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-/* responsive */
-@media (max-width: 880px){
-
-  .inner{
-    grid-template-columns: 1fr;
-    text-align: center;       /* center everything */
-    justify-items: center;    /* center children */
-  }
-
-  .left{
-    display: flex;
-    flex-direction: column;   /* stack vertically */
-    align-items: center;      /* center items */
-    text-align: center;       /* center text */
-    padding: 1rem 0;
-  }
-
-  .actions{
-    justify-content: center;  /* center buttons */
-  }
-
-  .right{
-    text-align: center;       /* center text */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .highlights{
+    font-size: 1.1rem;
+    line-height: 1.8;
     text-align: center;
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .skillsWrap{
-    justify-content: center;  /* center skill chips */
-  }
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: #475569;
 }
 
+.bio strong {
+    color: #2563eb;
+}
 
-@media (max-width: 520px) {
-  .about {
-    padding: 2rem 0.5rem;
-  }
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
 
-  .bio {
-    font-size: 0.98rem;
-  }
+.card {
+    background: #f8fafc;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    text-align: center;
+}
 
-  .name {
-    font-size: 1.15rem;
-  }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #2563eb;
+}
+
+.icon {
+    color: #2563eb;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title { font-size: 2rem; }
+    .bio { font-size: 1rem; padding: 0 10px; }
 }
