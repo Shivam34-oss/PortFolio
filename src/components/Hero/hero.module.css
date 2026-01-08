@@ -1,98 +1,145 @@
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top right , #1e293b, #0f172a);
-  /* color: #fff; */
-  padding: 2rem;
+  background: radial-gradient(circle at top right, #1e293b, #0f172a);
+  padding: 80px 1.5rem 2rem; /* Top padding for fixed navbar */
   text-align: center;
+  overflow-x: hidden; /* Prevent side scroll */
 }
+
 .container {
-  max-width: 800px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
+
 .title {
-  font-size: 3.5rem;
+  /* Clamp: Min 2rem, Mid 7vw, Max 4rem */
+  font-size: clamp(2rem, 7vw, 4rem); 
   color: white;
   margin-bottom: 1rem;
   font-weight: 800;
+  line-height: 1.1;
 }
-.name{
-  background: linear-gradient(to right , #60a5fa , #34d399);
+
+.name {
+  background: linear-gradient(to right, #60a5fa, #34d399);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block; /* Helps with gradient rendering */
 }
+
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   color: #94a3b8;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
-  /* opacity: 0.95; */
-}
-.description{
-  color: #64748b;
-  max-width: 600px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.6;
-}
-.ctas {
-  display:flex;
-  gap: 1.5rem;
-  justify-content:center;
-  margin-bottom: 3rem;
 }
 
-.btnPrimary {
-  background: #2563eb;
-  color:white;
+.description {
+  color: #64748b;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+.ctas {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap; /* Mobile par buttons niche aa jayenge */
+}
+
+.btnPrimary, .btnSecondary {
   padding: 0.8rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
+  transition: 0.3s;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  transition: 0.3s;
-  box-shadow: 0 10px 15px -3px rgba(37 , 99 , 235 , 0.3);
+  min-width: 180px; /* Uniform width for buttons */
+}
 
+.btnPrimary {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
 }
-.btnSecondary{
- border: 1px solid #334155;
- color: white;
- padding: 0.8rem 2rem;
- border-radius: 50px;
- text-decoration: none;
-transition: 0.3s;
+
+.btnSecondary {
+  border: 1px solid #334155;
+  color: white;
 }
-.btnPrimary:hover{
-  transform: translateY(-3px); background: #1d4ed8;
+
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  background: #1d4ed8;
 }
-.btnSecondary:hover{
+
+.btnSecondary:hover {
   background: #1e293b;
+  transform: translateY(-3px);
 }
 
-.socials{
+.socials {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   justify-content: center;
   margin-bottom: 3rem;
-
 }
+
 .socials a {
   color: #94a3b8;
-  transition: 0.3s;
-}
-.socials a:hover {
-  color: white;
-  transform: scale(1.2);
+  transition: 0.3s ease;
 }
 
-.skillBadge{
+.socials a:hover {
+  color: white;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skillBadge {
   background: rgba(30, 41, 59, 0.5);
   border: 1px solid #334155;
   color: #60a5fa;
-  padding: 0.4rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 20px;
-  font-size: 0.9rem;
-  margin: 0 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* --- MOBILE SPECIFIC FIXES --- */
+@media (max-width: 480px) {
+  .ctas {
+    flex-direction: column; /* Buttons ek ke niche ek */
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btnPrimary, .btnSecondary {
+    width: 100%; /* Full width buttons on small screens */
+    max-width: 280px;
+  }
+
+  .socials {
+    gap: 2rem;
+  }
+
+  .hero {
+    padding-top: 100px; /* Space for Navbar */
+  }
 }

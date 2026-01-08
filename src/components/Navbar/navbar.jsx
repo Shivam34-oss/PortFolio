@@ -20,21 +20,18 @@ export default function Navbar() {
 
   const toggle = () => setOpen((prev) => !prev);
 
-  //  CHECK LOGIN STATUS
   useEffect(() => {
     const token = localStorage.getItem("token");
     setIsLoggedIn(!!token);
   }, []);
 
-  // close on outside click
+  // Close on outside click
   useEffect(() => {
     function onDocClick(e) {
       if (!open) return;
       if (
-        navRef.current &&
-        !navRef.current.contains(e.target) &&
-        toggleRef.current &&
-        !toggleRef.current.contains(e.target)
+        navRef.current && !navRef.current.contains(e.target) &&
+        toggleRef.current && !toggleRef.current.contains(e.target)
       ) {
         setOpen(false);
       }
@@ -43,29 +40,6 @@ export default function Navbar() {
     return () => document.removeEventListener("click", onDocClick);
   }, [open]);
 
-  // close on escape key
-  useEffect(() => {
-    function onKey(e) {
-      if (e.key === "Escape" && open) setOpen(false);
-    }
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [open]);
-
-  // prevent background scroll when mobile menu open
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
-  // auto close on navigation
-  const onNavClick = () => {
-    if (open) setOpen(false);
-  };
-
-  //  LOGOUT HANDLER
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -74,36 +48,43 @@ export default function Navbar() {
     navigate("/");
   };
 
-   return (
+  return (
     <header className={styles.header}>
       <nav className={styles.navbar} aria-label="Primary navigation">
         <div className={styles.brand}>
-          <a href="#hero" className={styles.logo} onClick={() => navigate("/")}>
-             {/* Text logo with a dot for professional touch */}
+          <a href="#hero" className={styles.logo} onClick={() => {navigate("/"); setOpen(false);}}>
              Shivam<span className={styles.dot}>.</span>
           </a>
         </div>
 
-        {/* Existing Button and Backdrop code... */}
+        {/* Hamburger Menu Button */}
+        <button 
+          className={`${styles.mobileBtn} ${open ? styles.active : ""}`} 
+          onClick={toggle} 
+          ref={toggleRef}
+          aria-label="Toggle navigation"
+        >
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+        </button>
 
-        <ul id="primary-navigation" ref={navRef} className={`${styles.navList} ${open ? styles.active : ""}`}>
-          <NavItem href="#hero" onClick={onNavClick}>Home</NavItem>
-          <NavItem href="#about" onClick={onNavClick}>About</NavItem>
-          <NavItem href="#skills" onClick={onNavClick}>Skills</NavItem>
-          <NavItem href="#projects" onClick={onNavClick}>Projects</NavItem>
-          <NavItem href="#contact" onClick={onNavClick}>Contact</NavItem>
+        <ul className={`${styles.navList} ${open ? styles.active : ""}`} ref={navRef}>
+          <NavItem href="#hero" onClick={() => setOpen(false)}>Home</NavItem>
+          <NavItem href="#about" onClick={() => setOpen(false)}>About</NavItem>
+          <NavItem href="#skills" onClick={() => setOpen(false)}>Skills</NavItem>
+          <NavItem href="#projects" onClick={() => setOpen(false)}>Projects</NavItem>
+          <NavItem href="#contact" onClick={() => setOpen(false)}>Contact</NavItem>
 
-          {isLoggedIn ? (
-            <li className={styles.navItem}>
+          <li className={styles.navItem}>
+            {isLoggedIn ? (
               <button className={styles.authBtn} onClick={handleLogout}>Logout</button>
-            </li>
-          ) : (
-            <li className={styles.navItem}>
+            ) : (
               <button className={styles.authBtn} onClick={() => { setOpen(false); navigate("/auth-demo"); }}>
                 Login
               </button>
-            </li>
-          )}
+            )}
+          </li>
         </ul>
       </nav>
     </header>
