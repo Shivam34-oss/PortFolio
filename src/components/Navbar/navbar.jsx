@@ -1,92 +1,41 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "./navbar.module.css";
-
-const NavItem = ({ href, children, onClick }) => (
-  <li className={styles.navItem}>
-    <a href={href} onClick={onClick} className={styles.navLink}>
-      {children}
-    </a>
-  </li>
-);
+import React, { useState, useEffect } from 'react';
+import styles from './navbar.module.css';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const navRef = useRef(null);
-  const toggleRef = useRef(null);
-  const navigate = useNavigate();
-
-  const toggle = () => setOpen((prev) => !prev);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsLoggedIn(!!token);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close on outside click
-  useEffect(() => {
-    function onDocClick(e) {
-      if (!open) return;
-      if (
-        navRef.current && !navRef.current.contains(e.target) &&
-        toggleRef.current && !toggleRef.current.contains(e.target)
-      ) {
-        setOpen(false);
-      }
-    }
-    document.addEventListener("click", onDocClick);
-    return () => document.removeEventListener("click", onDocClick);
-  }, [open]);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    setIsLoggedIn(false);
-    setOpen(false);
-    navigate("/");
-  };
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <header className={styles.header}>
-      <nav className={styles.navbar} aria-label="Primary navigation">
-        <div className={styles.brand}>
-          <a href="#hero" className={styles.logo} onClick={() => {navigate("/"); setOpen(false);}}>
-             Shivam<span className={styles.dot}>.</span>
-          </a>
-        </div>
+    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+      <div className={styles.container}>
+        <a href="#hero" className={styles.logo} onClick={closeMenu}>
+          Shivam<span>.</span>
+        </a>
 
-        {/* Hamburger Menu Button */}
-        <button 
-          className={`${styles.mobileBtn} ${open ? styles.active : ""}`} 
-          onClick={toggle} 
-          ref={toggleRef}
-          aria-label="Toggle navigation"
-        >
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
+        <button className={styles.mobileToggle} onClick={toggleMenu} aria-label="Toggle menu">
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        <ul className={`${styles.navList} ${open ? styles.active : ""}`} ref={navRef}>
-          <NavItem href="#hero" onClick={() => setOpen(false)}>Home</NavItem>
-          <NavItem href="#about" onClick={() => setOpen(false)}>About</NavItem>
-          <NavItem href="#skills" onClick={() => setOpen(false)}>Skills</NavItem>
-          <NavItem href="#projects" onClick={() => setOpen(false)}>Projects</NavItem>
-          <NavItem href="#contact" onClick={() => setOpen(false)}>Contact</NavItem>
-
-          <li className={styles.navItem}>
-            {isLoggedIn ? (
-              <button className={styles.authBtn} onClick={handleLogout}>Logout</button>
-            ) : (
-              <button className={styles.authBtn} onClick={() => { setOpen(false); navigate("/auth-demo"); }}>
-                Login
-              </button>
-            )}
-          </li>
-        </ul>
-      </nav>
+        <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.open : ''}`}>
+          <a href="#about" className={styles.navLink} onClick={closeMenu}>About</a>
+          <a href="#skills" className={styles.navLink} onClick={closeMenu}>Skills</a>
+          <a href="#projects" className={styles.navLink} onClick={closeMenu}>Projects</a>
+          <a href="#certifications" className={styles.navLink} onClick={closeMenu}>Certifications</a>
+          <a href="#contact" className={styles.contactBtn} onClick={closeMenu}>Contact Me</a>
+        </nav>
+      </div>
     </header>
   );
 }

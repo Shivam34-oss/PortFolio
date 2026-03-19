@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./projects.module.css";
 import { ExternalLink, Github, Code2 } from 'lucide-react'; // Icons
+import Story from "./Story";
+
+// Helper function to check if a link is a valid production link
+const isValidLink = (link) => {
+  return link && link !== "#" && !link.includes("example.com") && !link.includes("yourusername");
+};
 
 const projectsData = [
   {
@@ -21,12 +27,53 @@ const projectsData = [
     demo: "https://wonderlust-listing-fgbx.onrender.com/",
     repo: "https://github.com/Shivam34-oss/MajorProject",
     type: "external"
+  },
+  {
+    id: "ai-content-gen",
+    title: "AI Content Automator",
+    description: "SaaS platform for automated blog & social media content generation using OpenAI API. Streamlines marketing workflows.",
+    tech: ["Next.js", "OpenAI API", "Stripe", "Tailwind"],
+    image: "/assets/projects/ai-dashboard.png",
+    demo: "", // Empty strings will now automatically hide the button
+    repo: "", 
+    type: "external"
+  },
+  {
+    id: "smart-bot",
+    title: "Smart Support Bot",
+    description: "Intelligent customer service automation agent. Uses NLP to classify tickets and provide instant automated responses.",
+    tech: ["Python", "FastAPI", "React", "TensorFlow"],
+    image: "/assets/projects/bot-ui.png",
+    demo: "",
+    repo: "",
+    type: "external"
+  },
+  {
+    id: "data-scraper",
+    title: "Data Scraper Pipeline",
+    description: "Automated ETL pipeline that scrapes e-commerce sites, cleans data, and visualizes market trends on a dashboard.",
+    tech: ["Node.js", "Puppeteer", "MongoDB", "Chart.js"],
+    image: "/assets/projects/scraper-dash.png",
+    demo: "",
+    repo: "",
+    type: "external"
+  },
+  {
+    id: "resume-ai",
+    title: "HR Resume Screener",
+    description: "Automated hiring tool that parses resumes and ranks candidates based on job descriptions using semantic matching.",
+    tech: ["React", "Flask", "Spacy (NLP)", "PostgreSQL"],
+    image: "/assets/projects/resume-ai.png",
+    demo: "",
+    repo: "",
+    type: "external"
   }
-  // Yahan aap apna naya project bas object add karke daal sakte hain
 ];
 
 export default function Projects() {
   return (
+    <>
+    <Story />
     <section className={styles.projects} id="projects">
       <div className={styles.container}>
         <div className={styles.header}>
@@ -64,14 +111,14 @@ export default function Projects() {
                     <Link to={`/projects/${p.id}`} className={styles.btnPrimary}>
                       <Code2 size={20} /> View Demo
                     </Link>
-                  ) : (
-                    <a href={p.demo} target="_blank" rel="noreferrer" className={styles.btnPrimary}>
+                  ) : isValidLink(p.demo) ? (
+                    <a href={p.demo} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary}>
                       <ExternalLink size={20} /> Live Demo
                     </a>
-                  )}
+                  ) : null}
 
-                  {p.repo && (
-                    <a href={p.repo} target="_blank" rel="noreferrer" className={styles.btnOutline}>
+                  {isValidLink(p.repo) && (
+                    <a href={p.repo} target="_blank" rel="noopener noreferrer" className={styles.btnOutline}>
                       <Github size={20} /> Source
                     </a>
                   )}
@@ -82,5 +129,6 @@ export default function Projects() {
         </div>
       </div>
     </section>
+    </>
   );
 }

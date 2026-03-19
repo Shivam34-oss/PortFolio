@@ -1,43 +1,75 @@
+import React from 'react';
 import styles from './skills.module.css';
-import { Layout, Server, Database, Wrench } from 'lucide-react'; // Icons
 
-const SKILLS = {
-  Frontend: ['HTML5', 'CSS3 / SCSS', 'JavaScript (ES6+)', 'React.js', 'Tailwind CSS'],
-  Backend: ['Node.js', 'Express.js', 'REST APIs', 'JWT Authentication'],
-  Database: ['MongoDB', 'Mongoose'],
-  Tools: ['Git', 'Postman', 'Vite', 'Vercel']
-};
-
-// Category ke hisaab se icons
-const iconMap = {
-  Frontend: <Layout className={styles.categoryIcon} />,
-  Backend: <Server className={styles.categoryIcon} />,
-  Database: <Database className={styles.categoryIcon} />,
-  Tools: <Wrench className={styles.categoryIcon} />
-};
+// Skill data grouped by rows for scrolling
+const SKILL_ROWS = [
+  [
+    { name: "HTML5", icon: "🌐" },
+    { name: "CSS3", icon: "🎨" },
+    { name: "JavaScript", icon: "⚡" },
+    { name: "React.js", icon: "⚛️" },
+    { name: "Redux", icon: "🔄" },
+    { name: "Tailwind", icon: "🌊" },
+    { name: "Bootstrap", icon: "🅱️" },
+    { name: "SASS", icon: "💅" },
+  ],
+  [
+    { name: "Node.js", icon: "🟢" },
+    { name: "Express.js", icon: "🚂" },
+    { name: "MongoDB", icon: "🍃" },
+    { name: "Mongoose", icon: "🦁" },
+    { name: "REST API", icon: "🔌" },
+    { name: "JWT Auth", icon: "🔐" },
+    { name: "Firebase", icon: "🔥" },
+    { name: "SQL", icon: "🗃️" },
+  ],
+  [
+    { name: "Git", icon: "📦" },
+    { name: "GitHub", icon: "🐙" },
+    { name: "Postman", icon: "🚀" },
+    { name: "Vite", icon: "⚡" },
+    { name: "VS Code", icon: "💻" },
+    { name: "Figma", icon: "🖌️" },
+    { name: "Vercel", icon: "▲" },
+    { name: "NPM", icon: "📦" },
+  ]
+];
 
 export default function Skills() {
   return (
     <section id="skills" className={styles.skillsSection}>
       <div className={styles.header}>
         <h2 className={styles.title}>Technical Skills</h2>
-        <div className={styles.underline}></div>
+        <div className={styles.bar}></div>
+        <p className={styles.subtitle}>Technologies I work with</p>
       </div>
 
-      <div className={styles.grid}>
-        {Object.entries(SKILLS).map(([category, items]) => (
-          <div key={category} className={styles.card}>
-            <div className={styles.cardHeader}>
-              {iconMap[category]}
-              <h3 className={styles.category}>{category}</h3>
-            </div>
-            <ul className={styles.list}>
-              {items.map(skill => (
-                <li key={skill} className={styles.skill}>
-                  {skill}
-                </li>
+      <div className={styles.scrollWrapper}>
+        {SKILL_ROWS.map((row, index) => (
+          <div 
+            key={index} 
+            className={styles.marquee} 
+            style={{ 
+              '--direction': index % 2 === 0 ? 'normal' : 'reverse',
+              '--duration': `${20 + index * 5}s` 
+            }}
+          >
+            <div className={styles.track}>
+              {/* Original Set */}
+              {row.map((skill, i) => (
+                <div key={`orig-${i}`} className={styles.flashCard}>
+                  <span className={styles.icon}>{skill.icon}</span>
+                  <span className={styles.name}>{skill.name}</span>
+                </div>
               ))}
-            </ul>
+              {/* Duplicate Set for Seamless Loop */}
+              {row.map((skill, i) => (
+                <div key={`dup-${i}`} className={styles.flashCard}>
+                  <span className={styles.icon}>{skill.icon}</span>
+                  <span className={styles.name}>{skill.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>

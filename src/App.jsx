@@ -11,6 +11,8 @@ import Projects from "./components/Projects/projects";
 import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import AuthUI from "./components/Pages/authui";
+import Certifications from "./components/Contact/Certifications";
+
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function HomeLayout() {
       <Skills />
       <Projects />
       <Contact />
+      <Certifications />
     </>
   );
 }

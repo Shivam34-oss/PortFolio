@@ -1,17 +1,30 @@
-/* Basic reset */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body, #root { height: 100%; }
+/* Assuming some base styles exist here */
 body {
-  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  line-height: 1.6;
-  background:#f8f7fb;
-  color:#111;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #050505;
+  color: #e0e0e0;
 }
 
-/* smooth scroll + anchor offset (for sticky header) */
-html { scroll-behavior: smooth; }
-main { padding-bottom: 3rem; }
+/* --- Custom Scrollbar for a Modern Look --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+::-webkit-scrollbar-track {
+  background: #050505;
+}
 
-.section-title { text-align:center; font-size:1.6rem; margin-bottom:1rem; }
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+  border: 2px solid #050505;
+}
 
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}

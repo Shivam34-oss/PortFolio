@@ -1,89 +1,112 @@
 .about {
-    padding: 100px 20px;
-    background-color: #ffffff; /* Contrast for Hero section */
-    color: #1e293b;
+  background-color: #050505;
+  color: #e0e0e0;
+  padding: 4rem 1rem;
+  position: relative;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 50px;
+.left {
+  position: relative;
 }
 
-.title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 10px;
+.name {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.underline {
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(to right, #2563eb, #34d399);
-    margin: 0 auto;
-    border-radius: 2px;
+.name::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
+  border-radius: 2px;
 }
 
 .bio {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 60px;
-    color: #475569;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
 }
 
-.bio strong {
-    color: #2563eb;
+/* Changed from simple list to Grid Cards */
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
-/* Grid Layout */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+.highlights li {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.card {
-    background: #f8fafc;
-    padding: 30px;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s ease;
-    text-align: center;
+.highlights strong {
+  display: block;
+  color: #a78bfa;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    border-color: #2563eb;
+.highlights li:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
 }
 
-.icon {
-    color: #2563eb;
-    width: 40px;
-    height: 40px;
-    margin-bottom: 15px;
+.skillsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    font-weight: 700;
+.skill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.card p {
-    font-size: 0.95rem;
-    color: #64748b;
-    line-height: 1.5;
+.skill:hover {
+  background: rgba(167, 139, 250, 0.1);
+  border-color: #a78bfa;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(167, 139, 250, 0.2);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
-    .title { font-size: 2rem; }
-    .bio { font-size: 1rem; padding: 0 10px; }
+  .inner { grid-template-columns: 1fr; gap: 2rem; }
 }
