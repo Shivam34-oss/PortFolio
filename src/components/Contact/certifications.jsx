@@ -110,7 +110,8 @@ export default function Certifications() {
             <img 
               src={certificateImg} 
               alt="Full Stack Web Development Certificate" 
-              className={styles.certificateImage} 
+              className={styles.certificateImage}
+              style={{ maxWidth: '100%', height: 'auto' }}
             />
           </div>
         </div>

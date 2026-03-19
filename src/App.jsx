@@ -12,6 +12,7 @@ import Contact from "./components/Contact/contact";
 import Footer from "./components/Footer/footer";
 import AuthUI from "./components/Pages/authui";
 import Certifications from "./components/Contact/certifications";
+import ChatBot from "./ChatBot";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="*" element={<HomeLayout />} />
         </Routes>
       </main>
+      <ChatBot />
       <Footer />
     </Router>
   );
@@ -34,14 +36,14 @@ function App() {
 
 function HomeLayout() {
   return (
-    <>
+    <div style={{ maxWidth: "100%", overflowX: "hidden" }}>
       <Hero />
       <About />
       <Skills />
       <Projects />
       <Contact />
       <Certifications />
-    </>
+    </div>
   );
 }
 
@@ -56,4 +58,3 @@ function ProjectRouter() {
 }
 
 export default App;
-

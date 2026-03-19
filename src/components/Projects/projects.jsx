@@ -33,7 +33,7 @@ const projectsData = [
     title: "AI Content Automator",
     description: "SaaS platform for automated blog & social media content generation using OpenAI API. Streamlines marketing workflows.",
     tech: ["Next.js", "OpenAI API", "Stripe", "Tailwind"],
-    image: "/assets/projects/ai-dashboard.png",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
     demo: "", // Empty strings will now automatically hide the button
     repo: "", 
     type: "external"
@@ -43,7 +43,7 @@ const projectsData = [
     title: "Smart Support Bot",
     description: "Intelligent customer service automation agent. Uses NLP to classify tickets and provide instant automated responses.",
     tech: ["Python", "FastAPI", "React", "TensorFlow"],
-    image: "/assets/projects/bot-ui.png",
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80",
     demo: "",
     repo: "",
     type: "external"
@@ -53,7 +53,7 @@ const projectsData = [
     title: "Data Scraper Pipeline",
     description: "Automated ETL pipeline that scrapes e-commerce sites, cleans data, and visualizes market trends on a dashboard.",
     tech: ["Node.js", "Puppeteer", "MongoDB", "Chart.js"],
-    image: "/assets/projects/scraper-dash.png",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     demo: "",
     repo: "",
     type: "external"
@@ -63,7 +63,7 @@ const projectsData = [
     title: "HR Resume Screener",
     description: "Automated hiring tool that parses resumes and ranks candidates based on job descriptions using semantic matching.",
     tech: ["React", "Flask", "Spacy (NLP)", "PostgreSQL"],
-    image: "/assets/projects/resume-ai.png",
+    image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80",
     demo: "",
     repo: "",
     type: "external"
