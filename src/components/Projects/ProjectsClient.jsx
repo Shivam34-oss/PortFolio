@@ -46,21 +46,19 @@ export default function ProjectsClient() {
   const [current, setCurrent] = useState(0);
   const length = projectsData.length;
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
+  const nextSlide = React.useCallback(() => {
+    setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
+  }, [length]);
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+  const prevSlide = React.useCallback(() => {
+    setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1));
+  }, [length]);
 
   // Auto-play carousel
   useEffect(() => {
-    const timer = setInterval(() => {
-        nextSlide();
-    }, 5000);
+    const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, [current]);
+  }, [nextSlide]);
 
   return (
     <section className={styles.projects} id="projects" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
@@ -73,13 +71,17 @@ export default function ProjectsClient() {
 
         <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', perspective: '1000px' }}>
             {/* Left Arrow */}
-            <button onClick={prevSlide} style={{
+            <button 
+              onClick={prevSlide} 
+              aria-label="Previous project"
+              style={{
                 position: 'absolute', left: '0', zIndex: 20,
                 background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
                 color: 'white', padding: '12px', borderRadius: '50%', cursor: 'pointer',
                 backdropFilter: 'blur(5px)', transition: 'all 0.3s ease'
             }} onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.2)'}
-               onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}>
+               onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
+            >
                 <ChevronLeft size={24} />
             </button>
 
@@ -107,8 +109,20 @@ export default function ProjectsClient() {
                       <div className={styles.cardBody} style={{ flex: '1', padding: '2rem' }}>
                         <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{p.title}</h3>
                         <p className={styles.description} style={{ fontSize: '1.1rem', color: '#ccc', marginBottom: '1.5rem' }}>{p.description}</p>
-                        <div className={styles.techStack} style={{ marginTop: 'auto' }}>
+                        <div className={styles.techStack} style={{ marginBottom: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                             {p.tech.map((t) => (<span key={t} className={styles.tag} style={{ background: 'rgba(79, 172, 254, 0.1)', color: '#4facfe', border: '1px solid rgba(79, 172, 254, 0.3)' }}>{t}</span>))}
+                        </div>
+                        <div style={{ marginTop: 'auto', display: 'flex', gap: '15px' }}>
+                          {p.demo && (
+                            <a href={p.demo} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#4facfe', textDecoration: 'none' }}>
+                              <ExternalLink size={18} /> Demo
+                            </a>
+                          )}
+                          {p.repo && (
+                            <a href={p.repo} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '5px', color: 'white', textDecoration: 'none' }}>
+                              <Github size={18} /> Code
+                            </a>
+                          )}
                         </div>
                       </div>
                     </article>
@@ -118,7 +132,10 @@ export default function ProjectsClient() {
             </div>
 
             {/* Right Arrow */}
-            <button onClick={nextSlide} style={{
+            <button 
+              onClick={nextSlide} 
+              aria-label="Next project"
+              style={{
                 position: 'absolute', right: '0', zIndex: 20,
                 background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
                 color: 'white', padding: '12px', borderRadius: '50%', cursor: 'pointer',

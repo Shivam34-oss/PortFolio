@@ -34,8 +34,8 @@ const projectsData = [
     description: "SaaS platform for automated blog & social media content generation using OpenAI API. Streamlines marketing workflows.",
     tech: ["Next.js", "OpenAI API", "Stripe", "Tailwind"],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
-    demo: "", // Empty strings will now automatically hide the button
-    repo: "", 
+    demo: "",
+    repo: "",
     type: "external"
   },
   {
